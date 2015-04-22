@@ -119,10 +119,35 @@
 		};
 
 		volume-down {
-			label = "Volume Down";
+			label = "Volume down";
 			gpios = <&gpio1 5 1>;
 			linux,code = <114>; /* KEY_VOLUMEDOWN */
 		};
+
+		emxys-GPIO1 {
+			label = "emxys GPIO1";
+			gpios = <&gpio2 15 1>; /* D19: SD4_DATA7/UART2_TX_DATA/GPIO2_IO15 */
+			linux,code = <59>; /* KEY_F1 */
+		};
+
+		emxys-GPIO2 {
+			label = "emxys GPIO2";
+			gpios = <&gpio2 12 1>; /* E18: SD4_DATA4/UART2_RX_DATA/GPIO2_IO12 */
+			linux,code = <60>; /* KEY_F2 */
+		};
+
+		emxys-GPIO3 {
+			label = "emxys GPIO3";
+			gpios = <&gpio2 13 0>; /* C19: SD4_DATA5/UART2_RTS_B/GPIO2_IO13 */
+			linux,code = <61>; /* KEY_F3 */
+		};
+
+		emxys-GPIO4 {
+			label = "emxys GPIO4";
+			gpios = <&gpio2 14 0>; /* B20: SD4_DATA6/UART2_CTS_B/GPIO2_IO14 */
+			linux,code = <62>; /* KEY_F4 */
+		};
+
 	};
 
 	sound {
@@ -496,6 +521,10 @@
 				MX6QDL_PAD_GPIO_9__GPIO1_IO09 0x80000000
 				MX6QDL_PAD_GPIO_1__WDOG2_B 0x80000000
 				MX6QDL_PAD_GPIO_2__GPIO1_IO02 0x80000000
+				MX6QDL_PAD_SD4_DAT7__GPIO2_IO15 0x80000000 /* emxys-GPIO1 */
+				MX6QDL_PAD_SD4_DAT4__GPIO2_IO12 0x80000000 /* emxys-GPIO2 */
+				MX6QDL_PAD_SD4_DAT5__GPIO2_IO13 0x80000000 /* emxys-GPIO3 */
+				MX6QDL_PAD_SD4_DAT6__GPIO2_IO14 0x80000000 /* emxys-GPIO4 */
 			>;
 		};
 	};
